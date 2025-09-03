@@ -36,7 +36,7 @@ const initialState = {
 export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  // ✅ Load user from localStorage once
+  
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // ✅ Setup Axios interceptor once
+  
   useEffect(() => {
     const interceptor = axios.interceptors.request.use(
       (config) => {
@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }) => {
     dispatch({ type: 'REGISTER_START' });
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/users/register', // ✅ fixed missing //
+        'http://localhost:5000/api/users/register',
         { name, email, password }
       );
       const user = response.data;
@@ -96,7 +96,7 @@ export const AuthProvider = ({ children }) => {
     dispatch({ type: 'LOGOUT' });
   }, []);
 
-  // ✅ Memoized so it doesn’t recreate each render
+  
   const clearError = useCallback(() => {
     dispatch({ type: 'CLEAR_ERROR' });
   }, []);

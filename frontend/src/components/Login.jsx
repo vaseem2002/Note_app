@@ -28,9 +28,9 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
-        {/* Card Container */}
+       
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* Decorative Header */}
+         
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 py-6 px-8">
             <h1 className="text-2xl font-bold text-white text-center">Notes App</h1>
           </div>

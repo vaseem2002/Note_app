@@ -9,7 +9,7 @@ const NoteItem = ({ note, onEdit, onDelete }) => {
 
   const handleDelete = () => {
     setIsDeleting(true);
-    // Add a slight delay to show the animation
+    
     setTimeout(() => {
       if (window.confirm('Are you sure you want to delete this note?')) {
         onDelete(note._id);
@@ -19,7 +19,7 @@ const NoteItem = ({ note, onEdit, onDelete }) => {
     }, 300);
   };
 
-  // Format date to be more readable
+ 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const now = new Date();

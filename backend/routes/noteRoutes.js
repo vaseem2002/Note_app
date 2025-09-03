@@ -5,7 +5,7 @@ const { protect } = require('../middleware/auth');
 
 const router = express.Router();
 
-// Get all notes for a user
+
 router.get('/', protect, async (req, res) => {
   try {
     const notes = await Note.find({ user: req.user._id }).sort({ createdAt: -1 });
@@ -16,7 +16,7 @@ router.get('/', protect, async (req, res) => {
   }
 });
 
-// Create a new note
+
 router.post('/', [
   protect,
   body('title').not().isEmpty().withMessage('Title is required'),
@@ -44,7 +44,7 @@ router.post('/', [
   }
 });
 
-// Update a note
+
 router.put('/:id', [
   protect,
   body('title').not().isEmpty().withMessage('Title is required'),
@@ -77,7 +77,7 @@ router.put('/:id', [
   }
 });
 
-// Delete a note
+
 router.delete('/:id', protect, async (req, res) => {
   try {
     const note = await Note.findById(req.params.id);

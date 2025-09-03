@@ -41,7 +41,7 @@ const initialState = {
 export const NotesProvider = ({ children }) => {
   const [state, dispatch] = useReducer(notesReducer, initialState);
 
-  // ✅ useCallback prevents new function reference each render
+ 
   const getNotes = useCallback(async () => {
     dispatch({ type: 'SET_LOADING' });
     try {

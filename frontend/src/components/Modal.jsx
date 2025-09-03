@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 const Modal = ({ onClose, title, children }) => {
   const modalRef = useRef(null);
 
-  // Close modal on Escape key press
+  
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
@@ -12,7 +12,7 @@ const Modal = ({ onClose, title, children }) => {
     };
     window.addEventListener('keydown', handleEsc);
     
-    // Prevent body scrolling when modal is open
+    
     document.body.style.overflow = 'hidden';
     
     return () => {
@@ -21,7 +21,7 @@ const Modal = ({ onClose, title, children }) => {
     };
   }, [onClose]);
 
-  // Close modal when clicking outside
+  
   const handleOutsideClick = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
       onClose();
@@ -40,7 +40,7 @@ const Modal = ({ onClose, title, children }) => {
         ref={modalRef}
         className="relative bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-95 opacity-0 animate-modal-in"
       >
-        {/* Header */}
+        
         <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-indigo-50">
           <h3 id="modal-title" className="text-2xl font-semibold text-gray-800">{title}</h3>
           <button
@@ -54,12 +54,12 @@ const Modal = ({ onClose, title, children }) => {
           </button>
         </div>
         
-        {/* Content */}
+       
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-130px)]">
           {children}
         </div>
         
-        {/* Footer - Optional for actions */}
+        
         <div className="flex justify-end p-6 border-t border-gray-100 bg-gray-50">
           <button
             onClick={onClose}

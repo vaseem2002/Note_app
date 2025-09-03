@@ -27,7 +27,7 @@ const NoteForm = ({ onSubmit, initialData = {}, loading = false, onCancel }) => 
 
   return (
     <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-      {/* Form Header */}
+     
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 py-4 px-6">
         <h2 className="text-xl font-semibold text-white">
           {initialData.title ? 'Edit Note' : 'Create New Note'}

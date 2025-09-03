@@ -30,7 +30,7 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop Menu */}
+         
           <div className="hidden md:flex items-center space-x-4">
             {user ? (
               <div className="flex items-center space-x-4">
@@ -65,7 +65,7 @@ const Navbar = () => {
             )}
           </div>
           
-          {/* Mobile menu button */}
+         
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
@@ -82,7 +82,7 @@ const Navbar = () => {
           </div>
         </div>
         
-        {/* Mobile Menu */}
+       
         {isMenuOpen && (
           <div className="md:hidden bg-indigo-700 rounded-lg mt-2 py-2 shadow-xl">
             {user ? (

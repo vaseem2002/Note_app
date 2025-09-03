@@ -12,7 +12,7 @@ const generateToken = (id) => {
   });
 };
 
-// Register
+
 router.post('/register', [
   body('name').not().isEmpty().withMessage('Name is required'),
   body('email').isEmail().withMessage('Please include a valid email'),
@@ -47,7 +47,7 @@ router.post('/register', [
   }
 });
 
-// Login
+
 router.post('/login', [
   body('email').isEmail().withMessage('Please include a valid email'),
   body('password').exists().withMessage('Password is required')
@@ -78,7 +78,7 @@ router.post('/login', [
   }
 });
 
-// Get user profile
+
 router.get('/profile', protect, async (req, res) => {
   res.json({
     _id: req.user._id,

@@ -13,16 +13,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
+
 app.use('/api/users', userRoutes);
 app.use('/api/notes', noteRoutes);
 
-// Health check endpoint
+
 app.get('/api/health', (req, res) => {
   res.json({ message: 'Server is running!' });
 });
 
-// Error handling middleware
+
 app.use((error, req, res, next) => {
   console.error(error);
   res.status(500).json({ message: 'Server error' });
